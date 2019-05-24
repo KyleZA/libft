@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   isalpha.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:18:07 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/05/22 10:26:05 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/05/23 11:43:12 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/05/24 10:19:26 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char ft_strcpy(char *dst, const char *src)
+int ft_isalpha(int c)
 {
-	int i;
-
-	i = 0;
-
-	while(src != '\0')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-	dst[1] = src[1];
-
-	return(*dst);
+if (c >= 65 && c <= 90 || c >= 97 && c <= 122)
+	{
+		return(1);
+	}
+	else
+	{
+		return(0);
+	}
 }
