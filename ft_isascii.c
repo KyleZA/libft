@@ -5,19 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 10:25:32 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/05/24 10:26:26 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/06/03 15:39:35 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/06/03 15:50:51 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int isascii(int c)
+#include "libft.h"
+
+int ft_isascii(int c)
 {
-	if(c >= 0 && c <= 127)
-	{
-		return(1);
-	}
-	else
-	{
-		return(0);
-	}
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
