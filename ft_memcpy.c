@@ -5,29 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/28 09:47:51 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/05/28 16:55:36 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/06/05 12:41:48 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/06/05 12:50:59 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memcpy(void *restrict dst, const void *restrict src,size_t n)
+#include "libft.h"
+
+void *memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t i;
-	int j;
+
+	int i;
 
 	i = 0;
-	j = 0;
 
-	while(src[i])
+	while ((i < len) && (src != '\0'))
 	{
-		if(src[j] != '\0')
-			i++;
+		dst[i] = src[i];
+		i++;
 	}
-	while(src[i] && dst[j])
+	while (i < len)
 	{
-		if(src[i] != '\0' && dst[j] != '\0')
-			*dst = *src;
-			j++;
-			i++;
+		dst[i] = NULL;
+		i++;
 	}
 }
