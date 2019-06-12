@@ -6,7 +6,7 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 13:32:32 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/05 13:38:21 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/12 15:39:11 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	char *chrdst;
-	char *chrsrc;
+	int i;
 
-	chrdst = (char *)dst;
-	chrsrc = (char *)src;
+	i = 0;
 
-	if (dst == NULL && src == NULL)
+	unsigned char *chrdst;
+	unsigned char *chrsrc;
+
+	chrdst = (unsigned char *)dst;
+	chrsrc = (unsigned char *)src;
+
+	while (n > 0)
 	{
-		return (NULL);
+		chrdst[i] = chrsrc[i];
+		if (chrsrc[i] == (unsigned char)c)
+			return (++chrdst);
+	i++;
+	n--;
 	}
-	while ((n > 0) && chrsrc[c] != '\0')
-	{
-		chrdst[c] = chrsrc[c];
-		c++;
-		n--;
-	}
-	return (dst);
+	return (NULL);
 }
