@@ -6,7 +6,7 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 10:18:07 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/12 09:42:05 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/14 12:21:57 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ char *ft_strcpy(char *dst, const char *src)
 
 	i = 0;
 
-	while (src[i])
+	while (src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if (src[i] == '\0')
+	if(src[i] == '\0')
 	{
 		dst[i] = src[i];
+	}
+	if (src == NULL && dst == NULL)
+	{
+		return (NULL);
 	}
 	return (dst);
 }
