@@ -6,15 +6,15 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 13:32:32 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/12 15:39:11 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/14 17:02:20 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
+void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 
@@ -28,7 +28,7 @@ void *ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 	{
 		chrdst[i] = chrsrc[i];
 		if (chrsrc[i] == (unsigned char)c)
-			return (++chrdst);
+			return (chrdst + i + 1);
 	i++;
 	n--;
 	}
