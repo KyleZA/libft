@@ -6,7 +6,7 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 14:15:57 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/05 14:31:10 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/14 15:23:18 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void ft_putendl(char const *s)
 	int i;
 
 	i = 0;
-
+	
+	if (!s)
+		return ;
 	while (s[i] != '\0')
 	{
 		write(1, &s[i], 1);
