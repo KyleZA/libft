@@ -6,13 +6,13 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 11:24:56 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/06 14:44:37 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:37:03 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t len;
 	size_t len2;
