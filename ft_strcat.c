@@ -6,28 +6,27 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 15:07:54 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/05/27 15:10:03 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:35:56 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	j = 0;
 	i = 0;
-
-	while(s1[i] != '\0')
+	while (s1[i] != '\0')
 	{
 		i++;
 	}
-	while(s2[j] != '\0')
+	while (s2[j] != '\0')
 	{
 		s1[i] = s2[j];
 		i++;
 		j++;
 	}
 	s1[i] = '\0';
-	return(s1);
+	return (s1);
 }
