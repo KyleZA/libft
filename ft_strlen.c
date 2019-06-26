@@ -6,18 +6,17 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:57:36 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/05/29 15:50:11 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/06/26 16:29:22 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
-
 	while (s[len] != '\0')
 	{
 		len++;
