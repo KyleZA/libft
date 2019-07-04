@@ -6,17 +6,17 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/24 11:38:19 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/24 12:17:59 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:07:12 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t i;
-	char *newstr;
-	
+	size_t	i;
+	char	*newstr;
+
 	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
