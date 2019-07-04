@@ -6,19 +6,17 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 16:28:11 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/20 11:34:50 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/07/04 12:59:37 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-
-	char *mem;
-
-	size_t i;
-	size_t j;
+	char	*mem;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
@@ -35,9 +33,9 @@ char *ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 	{
 		mem[i] = s2[j];
-		i++;
 		j++;
+		i++;
 	}
-	mem[i]= '\0';
+	mem[i] = '\0';
 	return (mem);
-}	
+}
