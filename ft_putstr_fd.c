@@ -6,14 +6,14 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 14:51:35 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/14 15:21:18 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/07/04 09:48:53 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
-{	
+{
 	int i;
 
 	i = 0;
