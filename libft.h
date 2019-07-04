@@ -6,7 +6,7 @@
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/28 08:06:38 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/25 12:09:15 by kfrancis         ###   ########.fr       */
+/*   Updated: 2019/07/04 13:44:36 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,6 @@ void ft_putstr_fd(char const *s, int fd);
 void ft_putendl_fd(char const *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 int ft_isspace(char c);
+char ft_iflower(char c);
+char ft_ifupper(char c);
 #endif
