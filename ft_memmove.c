@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kfrancis <kfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:39:05 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/26 16:18:15 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/07/09 15:35:00 by kfrancis          #+#    #+#             */
+/*   Updated: 2020/02/10 14:28:51 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	*chrdst;
-	char	*chrsrc;
+	size_t	i;
+	char	*d;
+	char	*s;
 
-	if (dst == NULL && src == NULL)
+	i = 0;
+	d = (char *)dst;
+	s = (char *)src;
+	if (src == NULL && dst == NULL)
 		return (NULL);
-	chrdst = (char *)dst;
-	chrsrc = (char *)src;
-	i = len;
-	j = 0;
-	k = 0;
 	if (dst > src)
-		while (i-- > 0)
-			chrdst[i] = chrsrc[i];
-	else
-		while (len > 0)
+		while (len--)
 		{
-			chrdst[k] = chrsrc[j];
-			j++;
-			k++;
-			len--;
+			d[len] = s[len];
+		}
+	else
+		while (len--)
+		{
+			d[i] = s[i];
+			i++;
 		}
 	return (dst);
 }

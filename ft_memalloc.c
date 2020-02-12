@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/19 10:59:17 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/07/04 09:23:24 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/08/12 09:07:43 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/08/23 10:39:42 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *memry;
+	void *str;
 
-	memry = (void *)malloc(sizeof(void) * size);
-	while (memry)
-	{
-		ft_bzero(memry, size);
-		return (memry);
-	}
-	return (NULL);
+	str = malloc(size);
+	if (str == NULL)
+		return (NULL);
+	ft_bzero(str, size);
+	return (str);
 }

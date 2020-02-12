@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/24 13:57:43 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/07/04 13:37:22 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/09/18 07:48:09 by kfrancis          #+#    #+#             */
+/*   Updated: 2020/02/10 15:48:01 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char		*final;
-	char		*cursor;
-	const char	*test;
-	int			i;
+	int		len;
+	int		i;
+	char	*str;
 
 	i = 0;
-	test = s;
+	len = 0;
 	if (!s)
 		return (NULL);
-	while (ft_isspace(*test))
-		test++;
-	i = strlen(test);
-	if (!i)
-		return (ft_strnew(0));
-	while (ft_isspace(test[i - 1]))
-		i--;
-	if (!(final = ft_strnew(i)))
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	if (*s == '\0')
+		return ("\0");
+	while (s[len] != '\0')
+		len++;
+	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t' || !s[len])
+		len--;
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	cursor = final;
-	while (i--)
-		*cursor++ = *test++;
-	return (final);
+	while (str && i <= len)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

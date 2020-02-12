@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <kfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/19 10:35:03 by kfrancis          #+#    #+#             */
-/*   Updated: 2020/02/10 14:34:31 by kfrancis         ###   ########.fr       */
+/*   Created: 2020/01/22 20:23:49 by kfrancis          #+#    #+#             */
+/*   Updated: 2020/02/10 15:08:09 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_itoa(int n)
 {
-	int i;
+	char	*s;
 
-	i = 0;
-	while (s[i])
+	if (!(s = (char *)malloc((sizeof(char)) + 2)))
+		return (NULL);
+	if (n == -2147483648)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
+		return (ft_strdup("-2147483648"));
 	}
-	if (s[i] == (char)c)
-		return ((char *)&s[i]);
-	return (NULL);
+	if (n < 0)
+	{
+		s[0] = '-';
+		s[1] = '\0';
+		s = ft_strjoin(s, ft_itoa(-n));
+	}
+	else if (n >= 10)
+	{
+		s = ft_strjoin(ft_itoa(n / 10), (ft_itoa(n % 10)));
+	}
+	else
+	{
+		s[0] = n + '0';
+		s[1] = '\0';
+	}
+	return (s);
 }

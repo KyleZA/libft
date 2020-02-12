@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 16:06:46 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/07/04 13:39:22 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/08/23 09:49:53 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/08/23 09:53:50 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
+	while (c >= 97 && c <= 122)
+	{
+		c = c - 32;
+	}
 	return (c);
 }

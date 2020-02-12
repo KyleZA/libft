@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kfrancis <kfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 09:58:18 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/07/02 14:14:18 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/08/05 09:17:32 by kfrancis          #+#    #+#             */
+/*   Updated: 2020/01/22 17:13:30 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,26 @@ int		ft_atoi(const char *str)
 {
 	int i;
 	int sign;
-	int val;
+	int res;
 
 	i = 0;
-	if (*str == '\0')
-		return (0);
-	while (ft_isspace(str[i]))
-		i++;
 	sign = 1;
-	if ((str[i] == '-') || (str[i] == '+'))
+	res = 0;
+	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+	|| str[i] == '\f' || str[i] == '\r') && str[i] != '\0')
+	{
+		i++;
+	}
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-	val = 0;
-	while (ft_isdigit(str[i]))
+	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
-		val = (val * 10) + (str[i] - '0');
+		res = ((res * 10) + str[i] - '0');
 		i++;
 	}
-	return (sign * val);
+	return (res * sign);
 }

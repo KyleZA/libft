@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncpy.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:29:00 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/26 16:34:22 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/07/12 11:01:26 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/07/17 14:47:19 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,21 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while ((i < len) && (src[i] != '\0'))
+	if (src == NULL && dst == NULL)
+		return (NULL);
+	while (i < len && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		i++;
-	}
+	if (src[i] == '\0')
+		while (i < len)
+		{
+			dst[i] = '\0';
+			i++;
+		}
 	return (dst);
 }

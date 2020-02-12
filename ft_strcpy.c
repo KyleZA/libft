@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kfrancis <kfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:18:07 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/26 16:32:34 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/07/12 13:48:12 by kfrancis          #+#    #+#             */
+/*   Updated: 2020/02/10 13:36:55 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -22,13 +22,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		dst[i] = src[i];
 		i++;
 	}
-	if (src[i] == '\0')
-	{
-		dst[i] = src[i];
-	}
-	if (src == NULL && dst == NULL)
-	{
-		return (NULL);
-	}
+	dst[i] = '\0';
 	return (dst);
 }

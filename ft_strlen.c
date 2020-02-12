@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kfrancis <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 09:57:36 by kfrancis          #+#    #+#             */
-/*   Updated: 2019/06/26 16:29:22 by kfrancis         ###   ########.fr       */
+/*   Created: 2019/07/11 10:24:10 by kfrancis          #+#    #+#             */
+/*   Updated: 2019/07/11 10:27:55 by kfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t i;
 
-	len = 0;
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
